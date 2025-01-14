@@ -23,7 +23,7 @@ export default async function Page({
 }: {
   searchParams: { [key: string]: string | undefined };
 }) {
-  const { author, tag, category, page: pageParam } = searchParams;
+  const { author, tag, category, page: pageParam } = await searchParams;
   const posts = await getAllPosts({ author, tag, category });
   const authors = await getAllAuthors();
   const tags = await getAllTags();
