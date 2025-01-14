@@ -1,0 +1,146 @@
+/* General */
+/* ---------------------------------------------------------------- */
+html {
+	font-size: theme('fontSize.base');
+	font-weight: theme('fontWeight.normal');
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+
+	.admin-bar &[alt=''] {
+		outline: solid 2px yellow;
+	}
+}
+
+label {
+	cursor: pointer;
+}
+
+b, strong {
+	font-weight: theme('fontWeight.bold');
+}
+
+p {
+	margin-bottom: theme('spacing.20');
+	line-height: theme('lineHeight.normal');
+}
+
+a {
+	color: var(--text-link-color);
+	font-weight: theme('fontWeight.bold');
+
+	&:hover {
+		color: var(--text-link-color-hover);
+		text-decoration: underline;
+	}
+
+	&:focus {
+		color: var(--text-link-color-focus);
+		text-decoration: underline;
+	}
+}
+
+address {
+	font-style: normal;
+}
+
+
+
+
+/* Headings */
+/* ---------------------------------------------------------------- */
+h1,h2,h3,h4,h5,h6, .wp-block-heading {
+	margin-bottom: theme('spacing.20');
+}
+
+.page-title,
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	font-family: theme('fontFamily.heading');
+	font-style: normal;
+	font-weight: theme('fontWeight.bold');
+	line-height: theme('lineHeight.none');
+}
+.page-title {
+	font-size: theme('fontSize.page-title');
+	font-weight: theme('fontWeight.normal');
+}
+h1, .h1 {
+	font-size: theme('fontSize.h1');
+	font-weight: theme('fontWeight.normal');
+}
+h2, .h2 {
+	font-size: theme('fontSize.h2');
+}
+h3, .h3, caption {
+	font-size: theme('fontSize.h3');
+}
+h4, .h4 {
+	font-size: theme('fontSize.h4');
+}
+h5, .h5 {
+	font-size: theme('fontSize.h5');
+}
+h6, .h6 {
+	font-size: theme('fontSize.h6');
+}
+
+
+/* Lists */
+/* ---------------------------------------------------------------- */
+.wp-block-list,
+ul:not([class]),
+ol:not([class]) {
+	padding: 0 0 theme('spacing.32') theme('spacing.48');
+	line-height: theme('lineHeight.relaxed');
+}
+
+ol.wp-block-list,
+ol:not([class]) {
+	li {
+		list-style: decimal
+	}
+}
+
+ul.wp-block-list,
+ul:not([class]) {
+	li {
+		list-style: disc;
+	}
+}
+
+
+
+
+/* Tables */
+/* ---------------------------------------------------------------- */
+.table-wrapper {
+	overflow-x: auto;
+}
+
+caption {
+	text-align: left;
+	margin-bottom: theme('spacing.32');
+}
+
+table {
+	width: 100%;
+	table-layout: fixed;
+	margin-bottom: theme('spacing.80');
+
+	td, th {
+		padding: 20px 16px;
+		vertical-align: top;
+		font-weight: theme('fontWeight.normal');
+	}
+	th {
+		text-align: left;
+		font-weight: theme('fontWeight.bold');
+	}
+}

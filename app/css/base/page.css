@@ -1,0 +1,43 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: calc( var(--masthead-height-desktop-reduced) + var(--secondary-menu-height) );
+}
+
+@media ( max-width: theme('screens.lg') ) {
+	html {
+		scroll-padding-top: calc( var(--masthead-height-mobile) + 80px );
+	}
+}
+
+
+body {
+	color: var(--primary_colour);
+	background-color: var(--background_colour);
+	overflow-x: hidden;
+	color: var(--text-body-color);
+	background-color: var(--body-bg);
+}
+
+/* Hide all content on the page while we are loading */
+.js {
+	opacity: 0;
+}
+.js.has-dom-ready {
+	opacity: 1;
+}

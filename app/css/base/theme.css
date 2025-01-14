@@ -1,0 +1,35 @@
+.theme-dark-bg {
+	--bg-color : theme('colors.blue-30');
+	--bg-color-hover : theme('colors.white / 05%');
+	--text-color : var(--color-light);
+	--text-color-hover : var(--color-light);
+	background-color: var(--bg-color);
+	color:  var(--text-color);
+}
+
+.theme-mid-bg {
+	--bg-color : theme('colors.gray-50');
+	--bg-color-hover : theme('colors.white / 20%');
+	--text-color : var(--color-dark);
+	--text-color-hover : var(--color-dark);
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+
+.theme-light-bg {
+	--bg-color : theme('colors.gray-40');
+	--bg-color-hover : theme('colors.white');
+	--text-color : var(--color-dark);
+	--text-color-hover : var(--color-dark);
+	background-color: var(--bg-color);
+	color:  var(--text-color);
+}
+
+.theme-white-bg {
+	--bg-color : theme('colors.white');
+	--bg-color-hover : theme('colors.gray-40');
+	--text-color : var(--color-dark);
+	--text-color-hover : var(--color-dark);
+	background-color: var(--bg-color);
+	color:  var(--text-color);
+}

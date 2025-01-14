@@ -1,0 +1,127 @@
+/* Base button class */
+.btn {
+	display: inline-flex;
+	cursor: pointer;
+	text-decoration: none;
+	font-family: theme('fontFamily.button');
+	font-weight: theme('fontWeight.bold');
+	line-height: theme('lineHeight.none');
+
+	color: var(--btn-color);
+	padding: var(--btn-border-width);
+	border: solid var(--btn-border-width) var(--btn-border);
+	border-radius: var(--btn-radius);
+
+	path {
+		fill: currentColor;
+	}
+
+	&:hover:not([disabled], :disabled, .disabled),
+	&:focus {
+		text-decoration: none;
+		color: var(--btn-color-hover);
+		.btn-inner {
+			background: var(--btn-background-hover);
+		}
+	}
+
+	&.btn-circle {
+		border-radius: var(--btn-circle-size);
+	}
+}
+
+/* Button inner, used to create the border gradient effect */
+.btn-inner {
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: var(--btn-gap);
+
+	background-color: var(--btn-background);
+	transition: var(--btn-transition);
+	padding: var(--btn-padding);
+	border-radius: calc( var(--btn-radius) - var(--btn-border-width) );
+
+	.btn-circle & {
+		padding: 0;
+		width: var(--btn-circle-size);
+		height: var(--btn-circle-size);
+		aspect-ratio: 1;
+		border-radius: var(--btn-circle-size);
+	}
+}
+
+/* Disabled Buttons */
+.btn,  .btn-circle {
+	&[disabled],
+	&:disabled,
+	&.disabled {
+		color: var(--btn-color-disabled);
+		border-color: var(--btn-border-color-disabled);
+		background-color: var(--btn-background-disabled);
+		cursor: default;
+		.btn-inner  {
+			background: var(--btn-background-disabled);
+		}
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+
+
+
+/* Circle button */
+.btn-circle {
+	display: inline-flex;
+	cursor: pointer;
+	text-decoration: none;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: var(--btn-circle-size);
+	height: var(--btn-circle-size);
+	aspect-ratio: 1;
+	border-radius: 100px;
+	border: solid var(--btn-border-width) var(--btn-background);
+	background-color: var(--btn-background);
+	transition: var(--btn-transition);
+	color: var(--btn-color);
+
+	path {
+		fill: currentColor;
+	}
+
+	&:hover:not([disabled], :disabled, .disabled),
+	&:focus {
+		color: var(--color-light);
+		border-color: var(--btn-background-hover);
+		background: var(--btn-background-hover);
+	}
+}
+
+
+/* Text buttons */
+.btn-text {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--btn-gap);
+	cursor: pointer;
+	text-decoration: none;
+	font-family: theme('fontFamily.button');
+	font-weight: theme('fontWeight.bold');
+	line-height: theme('lineHeight.none');
+	color: var(--color-dark);
+
+	path {
+		fill: currentColor;
+	}
+
+	&:hover {
+		color: var(--text-link-color-hover);
+		text-decoration: none;
+	}
+}

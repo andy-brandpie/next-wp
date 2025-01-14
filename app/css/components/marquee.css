@@ -1,0 +1,23 @@
+/* Scrolling marquee */
+/* ---------------------------------------------------------------- */
+.marquee__content {
+	--gap: clamp(theme('spacing.20'), 100vw, theme('spacing.56'));
+	gap: var(--gap);
+
+	&:hover .marquee__item {
+		animation-play-state: paused;
+	}
+}
+.marquee__item {
+	animation: scroll 5s linear infinite;
+}
+
+
+@keyframes scroll {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(calc(-100% -  var(--gap) ));
+	}
+}

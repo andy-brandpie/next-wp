@@ -1,0 +1,153 @@
+:root {
+
+	/* Colours */
+  /* ---------------------------------------------- */
+	--primary-color: theme('colors.purple');
+	--secondary-color: theme('colors.blue-30');
+
+	--color-dark: theme('colors.black');
+	--color-mid: theme('colors.gray-40');
+	--color-light: theme('colors.white');
+
+	--body-bg: theme('colors.white');
+
+  --text-body-color: theme('colors.black');
+  --text-link-color: theme('colors.purple');
+  --text-link-color-hover: theme('colors.purple / 90%');
+  --text-link-color-focus: theme('colors.purple / 90%');
+
+	/* SVG's */
+  /* ---------------------------------------------- */
+	--chevron-down: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path d='M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z' fill='black'/></svg>");
+	--chevron-down-light: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path d='M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z' fill='white'/></svg>");
+	--chevron-right: url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path d='M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z' fill='white'/></svg>");
+
+
+	/* Animation */
+	/* ---------------------------------------------- */
+  --animate-duration: 1s;
+
+
+	/* Notification */
+  /* ---------------------------------------------- */
+	--notification-height: theme('spacing.notification');
+
+
+	/* Swiper Carousels */
+  /* ---------------------------------------------- */
+	--swiper-pagination-bottom: 0;
+	--swiper-navigation-sides-offset: -5rem;
+
+	/* Masthead */
+  /* ---------------------------------------------- */
+	--masthead-logo-width: 240px;
+	--masthead-logo-width-reduced: 180px;
+
+	--masthead-logo-height-mobile: 24px;
+
+	--masthead-background: theme('colors.gray-40');
+	--masthead-height-mobile: 85px;
+	--masthead-height-desktop: 100px;
+	--masthead-height-desktop-reduced: 70px;
+
+	--masthead-transition: all 200ms theme('transitionTimingFunction.menu');
+	--search-transition: all 200ms ease-in-out;
+
+	--secondary-menu-background: theme('colors.blue-30');
+	--secondary-menu-height: 35px;
+
+
+	/* Navigation */
+  /* ---------------------------------------------- */
+	--menu-link-hover: theme('colors.purple');
+	--menu-link-current: theme('colors.purple');
+	--menu-border-color: theme('colors.gray-40 / 20%');
+
+	/* Desktop Dropdowns General */
+	--menu-dropdown-transition: opacity 200ms linear;
+	--menu-dropdown-bg: theme('colors.gray-20');
+	--menu-dropdown-offset: 0;
+	--menu-dropdown-radius: 10px;
+	--menu-dropdown-hover-bg: theme('colors.gray-40');
+	--menu-dropdown-current-bg: theme('colors.gray-40');
+	--menu-dropdown-width: 250px;
+	--menu-dropdown-padding: 12px;
+
+	/* Megamenu Dropdowns */
+	--menu-megamenu-dropdown-gap: 8px;
+	--menu-megamenu-dropdown-width: 760px;
+	--menu-megamenu-dropdown-padding: 8px;
+
+	/* Mobile and Tablet Off Canvas menu */
+	--menu-offcanvas-transition: all 400ms theme('transitionTimingFunction.menu');
+	--menu-offcanvas-bg: theme('colors.blue-30');
+	--menu-offcanvas-width: 100vw;
+	--menu-offcanvas-maxwidth: 500px;
+	--menu-offcanvas-padding: theme('spacing.20');
+	--menu-offcanvas-menu-spacing-primary: 24px;
+	--menu-offcanvas-menu-spacing-secondary: 16px;
+
+	/* Overlay when menus/dropdowns appear */
+	--menu-overlay-transition: opacity 500ms ease-in-out;
+
+
+  /* Form fields */
+  /* ---------------------------------------------- */
+  --field-padding: 8px 16px;
+  --field-border-width: 1px;
+  --field-border-radius: 5px;
+  --field-textarea-border-radius: 5px;
+  --field-error-color: theme('colors.red');
+  --field-color: theme('colors.black');
+  --field-placeholder: theme('colors.gray-40');
+  --field-checkbox-color: theme('colors.gray-40');
+
+  --field-border-color: theme('colors.gray-40');
+	--field-background: theme('colors.white');
+
+	--field-background-hover: theme('colors.white');
+  --field-border-hover: theme('colors.purple');
+
+  --field-background-focus: theme('colors.gray-20');
+  --field-border-focus: theme('colors.purple');
+
+  /* Checkboxes and radios */
+  /* ---------------------------------------------- */
+  --checkbox-size: 1.2em;
+  --checkbox-check-color: theme('colors.white');
+  --checkbox-border: theme('colors.gray-10');
+  --checkbox-background: theme('colors.white');
+  --checkbox-background-hover: theme('colors.gray-20');
+  --checkbox-border-hover: theme('colors.gray-10');
+  --checkbox-background-checked: theme('colors.purple');
+  --checkbox-border-checked: theme('colors.purple');
+
+  /* Buttons */
+  /* ---------------------------------------------- */
+  /* Defaults */
+  --btn-radius: 6px;
+  --btn-padding: 8px 16px;
+  --btn-circle-size: 38px;
+  --btn-border-width: 1px;
+  --btn-gap: theme('spacing.8');
+  --btn-transition: all 200ms ease-in-out;
+
+  --btn-color: theme('colors.white');
+	--btn-background: theme('colors.purple');
+	--btn-border: theme('colors.purple');
+
+	--btn-background-hover: theme('colors.purple / 60%');
+  --btn-color-hover: theme('colors.white');
+  --btn-border-color-hover: theme('colors.black');
+
+	--btn-background-disabled: theme('colors.gray-50');
+  --btn-color-disabled: theme('colors.black');
+  --btn-border-color-disabled: theme('colors.gray-50');
+
+
+  /* Wordpress */
+  /* ---------------------------------------------- */
+  --wp-admin-bar: 32px;
+  --wp-admin-bar-mobile: 46px;
+
+}

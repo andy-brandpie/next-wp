@@ -1,39 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-@layer base {
-  body {
-    color: var(--primary_colour);
-    background-color: var(--background_colour);
-  }
-}
-
-.fade-in {
-  animation: fade-in 500ms cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-}
-
-@-webkit-keyframes fade-in {
-  0% {
-    filter: blur(12px);
-    opacity: 0;
-  }
-
-  100% {
-    filter: blur(0px);
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    filter: blur(12px);
-    opacity: 0;
-  }
-
-  100% {
-    filter: blur(0px);
-    opacity: 1;
-  }
-}
+@import "./css/tailwind/tailwind.css";
+@import "./css/base/index.css";
+@import "./css/plugins/index.css";
+@import "./css/components/index.css";
+@import "./css/utilities/index.css";

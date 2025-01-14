@@ -1,0 +1,38 @@
+@keyframes fadeInUpSmall {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 30px, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.fadeInUpSmall {
+	animation-name: fadeInUpSmall;
+	&-pre {
+		opacity: 0;
+		transform: translate3d(0, 30px, 0);
+	}
+}
+
+
+@keyframes fadeInUpBig {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 100px, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.fadeInUpBig {
+	animation-name: fadeInUpBig;
+	&-pre {
+		opacity: 0;
+		transform: translate3d(0, 100px, 0);
+	}
+}

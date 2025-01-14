@@ -1,0 +1,119 @@
+.container {
+	max-width: theme('screens.2xl');
+
+	&-lg {
+		max-width: theme('screens.lg');
+	}
+	&-md {
+		max-width: theme('screens.md');
+	}
+
+	.container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+
+.text-inherit {
+	color: inherit;
+
+	&:hover {
+		color: inherit;
+		text-decoration: none
+	}
+}
+
+
+
+/* Responsive Spacings, gutters and padding */
+.mb {
+	@apply mb-32;
+	@apply md:mb-56;
+	@apply lg:mb-80;
+}
+
+.py {
+	@apply py-32;
+	@apply md:py-56;
+	@apply lg:py-80;
+}
+
+.pb {
+	@apply pb-32;
+	@apply md:pb-56;
+	@apply lg:pb-80;
+}
+
+.gap-y {
+	@apply gap-y-32;
+	@apply md:gap-y-56;
+	@apply lg:gap-y-80;
+}
+
+.p {
+	@apply p-16;
+	@apply lg:p-40;
+}
+
+.pt-lg {
+	@apply pt-64;
+	@apply md:pt-80;
+	@apply lg:pt-120;
+}
+.pt-md {
+	@apply pt-40;
+	@apply md:pt-64;
+	@apply lg:pt-80;
+}
+.pt-sm {
+	@apply pt-20;
+	@apply md:pt-32;
+	@apply lg:pt-40;
+}
+
+.pb-lg {
+	@apply pb-64;
+	@apply md:pb-80;
+	@apply lg:pb-120;
+}
+.pb-md {
+	@apply pb-40;
+	@apply md:pb-64;
+	@apply lg:pb-80;
+}
+.pb-sm {
+	@apply pb-20;
+	@apply md:pb-32;
+	@apply lg:pb-40;
+}
+
+
+
+.fade-in {
+	animation: fade-in 200ms cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@-webkit-keyframes fade-in {
+	0% {
+	filter: blur(12px);
+	opacity: 0;
+	}
+
+	100% {
+	filter: blur(0px);
+	opacity: 1;
+	}
+}
+
+@keyframes fade-in {
+	0% {
+	filter: blur(12px);
+	opacity: 0;
+	}
+
+	100% {
+	filter: blur(0px);
+	opacity: 1;
+	}
+}

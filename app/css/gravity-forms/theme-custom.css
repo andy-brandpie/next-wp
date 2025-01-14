@@ -1,0 +1,49 @@
+.gform-theme--foundation {
+	.gfield_required ,
+	.gform_submission_error {
+		color: var(--field-error-color);
+	}
+
+	.gfield_label,
+	.gform-field-label {
+		margin-bottom: theme('spacing.12');
+		font-weight: theme('fontWeight.bold');
+	}
+}
+
+.gform-theme--foundation .gfield_error .gform-theme-field-control:where(
+		:not(.gform-theme__disable):not(.gform-theme__disable *):not(
+				.gform-theme__disable-framework
+			):not(.gform-theme__disable-framework *)
+	),
+.gform-theme--foundation .gfield_error input[type]:where(:not(.gform-text-input-reset):not([type='hidden'])):where(
+		:not(.gform-theme__disable):not(.gform-theme__disable *):not(
+				.gform-theme__disable-framework
+			):not(.gform-theme__disable-framework *)
+	),
+.gform-theme--foundation .gfield_error select:where(
+		:not(.gform-theme__disable):not(.gform-theme__disable *):not(
+				.gform-theme__disable-framework
+			):not(.gform-theme__disable-framework *)
+	),
+.gform-theme--foundation .gfield_error select[multiple]:where(
+		:not(.gform-theme__disable):not(.gform-theme__disable *):not(
+				.gform-theme__disable-framework
+			):not(.gform-theme__disable-framework *)
+	),
+.gform-theme--foundation .gfield_error textarea:where(
+		:not(.gform-theme__disable):not(.gform-theme__disable *):not(
+				.gform-theme__disable-framework
+			):not(.gform-theme__disable-framework *)
+	) {
+		border-color: var(--field-error-color);
+}
+
+
+.gfield_description {
+	margin-top: theme('spacing.12');
+}
+
+.gfield_description.validation_message {
+	color: var(--field-error-color);
+}

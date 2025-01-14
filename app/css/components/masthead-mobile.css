@@ -1,0 +1,190 @@
+/* Hide some desktop things */
+/* ---------------------------------------------------------------- */
+.is-desktop {
+	display: none !important;
+}
+
+@media screen and (max-width: 600px) {
+	#wpadminbar {
+		position: fixed;
+	}
+}
+
+/* Site Masthead */
+/* ---------------------------------------------------------------- */
+body {
+	padding-top: var(--masthead-height-mobile);
+}
+
+.site-masthead {
+	.admin-bar & {
+		top: var(--wp-admin-bar-mobile);
+	}
+
+	&__inner {
+		height: var(--masthead-height-mobile);
+	}
+}
+
+
+/* Site Logo */
+/* ---------------------------------------------------------------- */
+.site-logo {
+	svg {
+		height: var(--masthead-logo-height-mobile);
+	}
+}
+
+
+/* Site Search */
+/* ---------------------------------------------------------------- */
+.site-search-dropdown {
+	top: 0;
+
+	.has-search-active & {
+		top: calc( var(--masthead-height-mobile) );
+	}
+	.has-search-active.has-notification & {
+		top: calc( var(--masthead-height-mobile) + var(--notification-height) );
+	}
+	.admin-bar.has-search-active & {
+		top: calc( var(--masthead-height-mobile) + var(--wp-admin-bar) );
+	}
+	.admin-bar.has-search-active.has-notification & {
+		top: calc( var(--masthead-height-mobile) + var(--wp-admin-bar) + var(--notification-height) );
+	}
+}
+
+/* Menu Wrapper */
+/* ---------------------------------------------------------------- */
+.primary-menu__wrapper {
+	position: fixed;
+	z-index: theme('zIndex.mainmenu');
+	background-color: var(--menu-offcanvas-bg);
+	top: var(--masthead-height-mobile);
+	right: 0;
+	bottom: 0;
+	min-height: calc(100vh - var(--masthead-height-mobile));
+	width: var(--menu-offcanvas-width);
+	max-width: var(--menu-offcanvas-maxwidth);
+	transition: var(--menu-offcanvas-transition);
+	transform: translate3d(100%, 0, 0);
+	overflow-y: scroll;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+
+	.admin-bar & {
+		top: calc( var(--wp-admin-bar-mobile) + var(--masthead-height-mobile) );
+		min-height: calc(100vh - var(--wp-admin-bar-mobile) - var(--masthead-height-mobile));
+	}
+
+	.has-notification & {
+		top: calc( var(--notification-height) + var(--masthead-height-mobile) );
+		min-height: calc(100vh - var(--notification-height) - var(--masthead-height-mobile));
+	}
+
+	.admin-bar.has-notification & {
+		top: calc( var(--wp-admin-bar-mobile) + var(--notification-height) + var(--masthead-height-mobile) );
+		min-height: calc(100vh - var(--wp-admin-bar-mobile) - var(--notification-height) - var(--masthead-height-mobile));
+	}
+
+	.has-navigation-active & {
+		transform: translate3d(0, 0, 0);
+	}
+
+}
+
+/* Primary Menu */
+/* ---------------------------------------------------------------- */
+.primary-menu {
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+/* Menu links */
+/* ---------------------------------------------------------------- */
+.menu-link {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-family: theme('fontFamily.heading');
+	white-space: nowrap;
+	font-size: theme('fontSize.md');
+	color: var(--color-light);
+	padding: var(--menu-offcanvas-menu-spacing-primary) var(--menu-offcanvas-padding);
+	border-bottom: solid 1px var(--menu-border-color);
+
+	&:hover,
+	&:focus {
+		color: var(--color-light);
+	}
+}
+
+
+/* Arrow icons */
+.menu-link-back:after,
+.menu-item-has-children > .menu-link:after {
+	width: 1rem;
+	height: 1rem;
+}
+
+
+.menu-item-has-children > .menu-link:after {
+	/* '►' */
+	background-image: var(--chevron-right);
+}
+
+.menu-link-back {
+	text-transform: uppercase;
+	flex-direction: row-reverse;
+	border-bottom: solid 1px var(--menu-border-color);
+	&:after {
+		/* '◄' */
+		background-image: var(--chevron-right);
+		transform: rotate(180deg);
+	}
+}
+
+
+
+/* Flyout menus */
+/* ---------------------------------------------------------------- */
+.dropdown-level-2,
+.dropdown-level-3,
+.dropdown-level-4,
+.dropdown-level-5,
+.dropdown-level-- {
+	position: absolute;
+	z-index: theme('zIndex.mainmenu');
+	transform: translate3d(100%, 0, 0);
+	top: 0;
+	width: 100%;
+	display: none;
+
+	.is-expanded > & {
+		display: block;
+	}
+}
+
+.primary-menu {
+	transition: var(--menu-offcanvas-transition);
+
+	.cascade-level-2 & {
+		transform: translate3d(-100%, 0, 0);
+	}
+	.cascade-level-3 & {
+		transform: translate3d(-200%, 0, 0);
+	}
+	.cascade-level-4 & {
+		transform: translate3d(-300%, 0, 0);
+	}
+	.cascade-level-5 & {
+		transform: translate3d(-400%, 0, 0);
+	}
+	.cascade-level-6 & {
+		transform: translate3d(-500%, 0, 0);
+	}
+}
+

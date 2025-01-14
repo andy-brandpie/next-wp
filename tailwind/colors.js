@@ -1,0 +1,15 @@
+exports.colors = {
+  'transparent' : 'transparent',
+  'black' : '#000000',
+  'white' : '#ffffff',
+  'blue-10' : '#1BC4FF',
+  'blue-30' : '#00243F',
+  'blue-90' : '#0C0A17',
+  'purple' : '#6f42c1',
+  'red' : '#dc3545',
+  'gray-10' : '#FEFEFE',
+  'gray-20' : '#FAFAFA',
+  'gray-30' : '#F4F3F3',
+  'gray-40' : '#E6E6E6',
+  'gray-50' : '#CCCCCC',
+};

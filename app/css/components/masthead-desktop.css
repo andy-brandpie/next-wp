@@ -1,0 +1,359 @@
+/* Hide some mobile things */
+/* ---------------------------------------------------------------- */
+.menu-item-back,
+.menu-link-back,
+.toggle-site-navigation,
+.menu-item-title,
+.is-mobile {
+	display: none !important;
+}
+
+
+/* Site Masthead */
+/* ---------------------------------------------------------------- */
+body {
+	padding-top: calc( var(--masthead-height-desktop) + var(--secondary-menu-height) );
+
+	&.has-notification {
+		padding-top: calc( var(--masthead-height-desktop) + var(--secondary-menu-height) + var(--notification-height) );
+	}
+}
+
+
+.site-masthead {
+
+	.admin-bar & {
+		top: var(--wp-admin-bar);
+	}
+
+	&__inner {
+		height: var(--masthead-height-desktop);
+
+		.has-reduced-menu & {
+			height: var(--masthead-height-desktop-reduced);
+		}
+	}
+
+	.has-scrolled-down & {
+		top: calc(-1 * var(--secondary-menu-height) );
+	}
+
+	.admin-bar.has-scrolled-down & {
+		top: calc(-1 * var(--secondary-menu-height) + var(--wp-admin-bar) );
+	}
+
+	.has-notification.has-scrolled-down & {
+		top: calc(-1 * var(--secondary-menu-height) - var(--notification-height) );
+	}
+
+	.admin-bar.has-notification.has-scrolled-down & {
+		top: calc(-1 * var(--secondary-menu-height) - var(--notification-height) + var(--wp-admin-bar) );
+	}
+
+}
+
+
+
+/* Site Search */
+/* ---------------------------------------------------------------- */
+.site-search-dropdown {
+	top: 0;
+	.has-search-active & {
+		top: calc( var(--masthead-height-desktop) + var(--secondary-menu-height) );
+	}
+	.has-search-active.has-notification & {
+		top: calc( var(--masthead-height-desktop) + var(--secondary-menu-height) + var(--notification-height) );
+	}
+	.has-search-active.has-scrolled-down & {
+		top: calc( var(--masthead-height-desktop) );
+	}
+
+	.has-search-active.has-reduced-menu & {
+		top: var(--masthead-height-desktop-reduced);
+	}
+
+
+	.admin-bar.has-search-active & {
+		top: calc( var(--masthead-height-desktop) + var(--secondary-menu-height) + var(--wp-admin-bar) );
+	}
+	.admin-bar.has-search-active.has-notification & {
+		top: calc( var(--masthead-height-desktop) + var(--secondary-menu-height) + var(--wp-admin-bar) + var(--notification-height) );
+	}
+	.admin-bar.has-scrolled-down.has-search-active & {
+		top: calc( var(--masthead-height-desktop) + var(--wp-admin-bar) );
+	}
+}
+
+/* Site Logo */
+/* ---------------------------------------------------------------- */
+.site-logo {
+	svg {
+		width: var(--masthead-logo-width);
+
+		.has-reduced-menu & {
+			width: var(--masthead-logo-width-reduced);
+		}
+	}
+}
+
+
+/* Secondary Menu */
+/* ---------------------------------------------------------------- */
+.secondary-menu__wrapper {
+	background-color: var(--secondary-menu-background);
+}
+
+.secondary-menu {
+
+}
+
+/* Primary Menu */
+/* ---------------------------------------------------------------- */
+.primary-menu {
+	display: flex;
+	gap: theme('spacing.20');
+	position: relative;
+}
+
+
+/* Dropdown Menus */
+/* ---------------------------------------------------------------- */
+.dropdown {
+	position: absolute;
+	z-index: theme('zIndex.mainmenu');
+	transition: var(--menu-dropdown-transition);
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+}
+
+
+/* Primary navigation drop down menu */
+.dropdown-primary {
+	.dropdown-menu {
+		background-color: var(--menu-dropdown-bg);
+		border-radius: var(--menu-dropdown-radius);
+
+	}
+
+	/* Megamenu drop downs */
+  .is-megamenu > & > .dropdown-menu {
+    display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: var(--menu-megamenu-dropdown-gap);
+		width: var(--menu-megamenu-dropdown-width);
+		padding: var(--menu-megamenu-dropdown-padding);
+  }
+
+	.is-megamenu > &.dropdown-level-2 {
+		top: 100%;
+		right: 0;
+	}
+
+
+	/* Normal dropdown menus */
+	.not-megamenu > & > .dropdown-menu {
+		padding: var(--menu-dropdown-padding);
+		width: var(--menu-dropdown-width);
+	}
+
+	.not-megamenu > &.dropdown-level-2 {
+		top: 100%;
+		/* right: 0; */
+		right: calc( var(--menu-dropdown-width) * .33 * -1 );
+	}
+
+
+}
+
+
+/* Secondary navigation drop down menu */
+.dropdown-secondary  {
+	.dropdown-menu {
+		background-color: var(--color-light);
+	}
+
+	&.dropdown-level-2 {
+		top: 100%;
+		left: 0;
+	}
+}
+
+/* End/last menu item drop down menu, position to the edge of the screen */
+.secondary-menu .menu-item:last-child .dropdown {
+	left: auto;
+	right: 0;
+}
+
+
+/* Menu items */
+/* ---------------------------------------------------------------- */
+.menu-item {
+
+	/* Primary navigation menu items */
+	.primary-menu & {
+		z-index: theme('zIndex.mainmenu-primary-item');
+
+		&-1.not-megamenu {
+			position: relative;
+		}
+
+    /* Top level menu link current state */
+		&-1.current-menu-ancestor > .menu-link,
+		&-1.current-menu-item > .menu-link {
+			color: var(--menu-link-current);
+      border-bottom-color: var(--menu-link-current);
+		}
+
+		&-1.current-menu-ancestor:hover > .menu-link,
+		&-1.current-menu-item:hover > .menu-link {
+			color: var(--menu-link-hover);
+      border-bottom-color: var(--menu-link-current);
+		}
+
+    &-2.current-menu-ancestor > .menu-link,
+		&-2.current-menu-item > .menu-link {
+      background-color: var(--menu-dropdown-current-bg);
+		}
+
+    &-2.current-menu-ancestor:hover > .menu-link,
+		&-2.current-menu-item:hover > .menu-link {
+      background-color: var(--menu-dropdown-current-bg);
+		}
+
+  }
+
+  /* Secondary navigation menu items */
+	.secondary-menu & {
+		position: relative;
+		z-index: theme('zIndex.mainmenu-secondary-item');
+
+		&-2:last-of-type .menu-link {
+			border-bottom: none;
+		}
+	}
+
+
+	/* Drop down menu functionality */
+	&:has(.menu-link:focus) > .dropdown,
+	&:focus > .dropdown,
+	&:hover > .dropdown {
+		max-height: 1000px;
+		opacity: 1;
+		overflow: visible;
+	}
+
+	&:focus > .menu-link:after,
+	&:hover > .menu-link:after {
+		transform: rotate(180deg);
+	}
+
+
+	/* Primary Menu menu offset */
+	.primary-menu &:hover > .dropdown {
+		padding-top: var(--menu-dropdown-offset);
+	}
+}
+
+
+
+/* Menu links */
+/* ---------------------------------------------------------------- */
+.menu-link {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	position: relative;
+	z-index: theme('zIndex.max');
+	color: var(--color-dark);
+	line-height: theme('lineHeight.none');
+	white-space: nowrap;
+
+	/* Primary navigation links */
+	.primary-menu & {
+		&-1 {
+			padding: 20px 0;
+			font-weight: theme('fontWeight.normal');
+      border-bottom: solid 2px transparent;
+		}
+		&-2 {
+			align-items: flex-start;
+			gap: var(--menu-megamenu-dropdown-gap);
+			padding: 12px;
+			border-radius: var(--menu-dropdown-radius);
+
+			&:focus,
+			&:hover {
+				background-color: var(--menu-dropdown-hover-bg);
+			}
+		}
+	}
+
+
+	/* Secondary navigation links */
+	.secondary-menu & {
+		--padding: theme('spacing.12');
+		font-size: theme('fontSize.sm');
+		font-weight: theme('fontWeight.normal');
+
+		&-1 {
+			height: var(--secondary-menu-height);
+			padding: 0 var(--padding);
+			color: var(--color-light);
+			&:focus,
+			&:hover {
+				color: var(--color-light);
+			}
+		}
+		&-2 {
+			color: var(--color-dark);
+			padding: var(--padding);
+			border-bottom: solid 1px theme('colors.gray-30');
+
+			&:focus,
+			&:hover {
+				color: var(--color-light);
+				background-color: theme('colors.purple');
+			}
+		}
+	}
+
+
+
+	/* Children chevron arrows */
+	.menu-item-has-children > &:after {
+		width: 1rem;
+		height: 1rem;
+	}
+
+	/* Secondary menu arrow */
+	.secondary-menu .menu-item-has-children > &:after {
+		/* '▼' */
+		background-image: var(--chevron-down-light);
+	}
+
+	/* Primary menu arrow */
+	.primary-menu .menu-item-has-children > &:after {
+		/* '▼' */
+		background-image: var(--chevron-down);
+	}
+
+	.primary-menu .current-menu-ancestor > &:after,
+	.primary-menu .current-menu-item.menu-item-has-children > &:after,
+	.primary-menu .menu-item-has-children > &:hover:after {
+		/* '▼' */
+		background-image: var(--chevron-down);
+	}
+
+	/* Drop down menu links */
+	.dropdown-level-2 & {
+		font-weight: theme('fontWeight.normal');
+	}
+
+	/* Drop down menu arrow */
+	.dropdown-level-2 .menu-item-has-children > &:after {
+		/* '►'; */
+		background-image: var(--chevron-right);
+	}
+
+}

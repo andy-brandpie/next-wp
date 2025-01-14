@@ -1,0 +1,33 @@
+.breadcrumb {
+	display: flex;
+	align-items: center;
+	font-size: theme('fontSize.sm');
+	gap: 8px;
+	padding-bottom: theme('spacing.12');
+
+	&__wrapper {
+		padding-block: 8px;
+	}
+
+	&__item {
+		display: flex;
+		gap: 8px;
+	}
+
+	&__link{
+	}
+
+	&__link:hover {
+
+	}
+
+	&__link-current {
+    font-weight: theme('fontWeight.bold');
+	}
+
+  &__seperator  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

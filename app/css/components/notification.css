@@ -1,0 +1,30 @@
+/* Notification */
+/* ---------------------------------------------------------------- */
+@import "./marquee.css";
+
+.close-notification {
+	height: 0;
+	overflow: hidden;
+}
+
+.marquee__content {
+	--gap: clamp(theme('spacing.20'), 100vw, theme('spacing.80'));
+	gap: var(--gap);
+
+	&:hover .marquee__text {
+		animation-play-state: paused;
+	}
+}
+.marquee__text {
+	animation: scroll 30s linear infinite;
+}
+
+
+@keyframes scroll {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(calc(-100% -  var(--gap) ));
+	}
+}
